@@ -1,3 +1,4 @@
+import 'package:app_livraison/views/detailsChauffeur.dart';
 import 'package:flutter/material.dart';
 
 class CardImageVille extends StatefulWidget {
@@ -46,11 +47,9 @@ class _CardImageVilleState extends State<CardImageVille> {
               spreadRadius: 0.0,
             ),
           ],
-
           image: DecorationImage(
-            colorFilter:
-            ColorFilter.mode(Colors.black.withOpacity(0.7),
-                BlendMode.dstATop),
+            colorFilter: ColorFilter.mode(
+                Colors.black.withOpacity(0.7), BlendMode.dstATop),
             image: AssetImage(linkImage),
             fit: BoxFit.cover,
           ),
@@ -60,8 +59,7 @@ class _CardImageVilleState extends State<CardImageVille> {
           child: Text(
             ville,
             style: TextStyle(
-              fontSize: 22,
-                fontWeight: FontWeight.bold, color: Colors.white),
+                fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white),
           ),
         ),
       )

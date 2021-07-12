@@ -1,5 +1,7 @@
 import 'package:app_livraison/components/cardImageVlille.dart';
 import 'package:app_livraison/components/cardList.dart';
+import 'package:app_livraison/components/chat.dart';
+import 'package:app_livraison/pages/listMessage.dart';
 import 'package:flutter/material.dart';
 
 class GridLayout {
@@ -23,6 +25,12 @@ class GridLayout {
         linkImage: params["linkImage"],
         text3: params["text3"],
       );
+    }
+    if (name == "Chat") {
+      widgetResult = Chat();
+    }
+    if (name == "ListMessage") {
+      widgetResult = ListMessage();
     }
 
     return widgetResult;

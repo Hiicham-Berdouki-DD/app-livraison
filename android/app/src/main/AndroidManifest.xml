@@ -1,9 +1,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.app_livraison">
    <application
+
         android:label="app_livraison"
         android:icon="@mipmap/ic_launcher">
-        <activity
+       <meta-data android:name="com.google.android.geo.API_KEY"
+           android:value="AIzaSyDXGQ0Gw-Pyv5-lxXpL-Jj9cXKMfbXtxTs"/>
+
+       <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
             android:theme="@style/LaunchTheme"
@@ -14,7 +18,7 @@
                  the Android process has started. This theme is visible to the user
                  while the Flutter UI initializes. After that, this theme continues
                  to determine the Window background behind the Flutter UI. -->
-            <meta-data
+             <meta-data
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />

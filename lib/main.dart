@@ -1,4 +1,6 @@
+import 'package:app_livraison/views/chatView.dart';
 import 'package:app_livraison/views/chauffeur.dart';
+import 'package:app_livraison/views/listMessageView.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'views/home_page.dart';
@@ -32,13 +34,10 @@ class _HomeState extends State<Home> {
     if (indexActive == 1) {
       result = Chauffeur().renderPage(context);
     }
-    // if (indexActive == 2) {
-    //   result = Text('Page3');
-    // }
-    // if (indexActive == 3) {
-    //   result = Text('Page4');
-    // }
-    //
+    if (indexActive == 2) {
+      result = ListMesageView().renderPage(context);
+    }
+
     return result;
   }
 
@@ -67,16 +66,15 @@ class _HomeState extends State<Home> {
         items: [
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.home),
-            label:'Home',
-
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.profile_circled),
-            label:'Profil',
+            label: 'Profil',
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.mail),
-            label:'Messages',
+            label: 'Messages',
           ),
         ],
       ),

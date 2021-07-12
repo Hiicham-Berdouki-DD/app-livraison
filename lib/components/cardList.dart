@@ -1,3 +1,5 @@
+import 'package:app_livraison/components/chat.dart';
+import 'package:app_livraison/views/detailsChauffeur.dart';
 import 'package:flutter/material.dart';
 
 class CardList extends StatefulWidget {
@@ -38,21 +40,29 @@ class _CardListState extends State<CardList> {
               padding: const EdgeInsets.all(10.0),
               child: Row(
                 children: [
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: 120,
-                        height: 170,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          image: DecorationImage(
-                            image: AssetImage(linkImage),
-                            fit: BoxFit.cover,
+                  GestureDetector(
+                    onTap: () {
+                      print('clicked');
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (BuildContext context) =>
+                              DetailsChaffeur()));
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: 120,
+                          height: 170,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            image: DecorationImage(
+                              image: AssetImage(linkImage),
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                   Padding(padding: EdgeInsets.only(right: 15)),
                   Flexible(
@@ -71,14 +81,24 @@ class _CardListState extends State<CardList> {
                         ),
                         Text(
                           text3,
-                          style: TextStyle(fontSize: 12, color: Color(0xFF9b9a98)),
+                          style:
+                              TextStyle(fontSize: 12, color: Color(0xFF9b9a98)),
                         ),
                         Align(
                           alignment: Alignment.bottomRight,
-                          child: Text(
-                            'Envoyer un message',
-                            style: TextStyle(
-                                color: Color(0xFFcf4c30), fontSize: 12),
+                          child: GestureDetector(
+                            onTap: () {
+                              print('clicked');
+                              Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (BuildContext context) =>
+                                          Chat()));
+                            },
+                            child: Text(
+                              'Envoyer un message',
+                              style: TextStyle(
+                                  color: Color(0xFFcf4c30), fontSize: 12),
+                            ),
                           ),
                         )
                       ],
